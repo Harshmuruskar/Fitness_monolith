@@ -1,0 +1,230 @@
+{
+  "info": {
+    "name": "Fitness Activity Tracker API",
+    "description": "Collection for testing the Fitness Activity Tracker CRUD API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Activities",
+      "item": [
+        {
+          "name": "Create Activity",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"type\": \"RUNNING\", \"duration\": 30, \"caloriesBurned\": 300, \"startTime\": \"2024-04-07T09:00:00\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/activities",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "activities"]
+            }
+          }
+        },
+        {
+          "name": "Get All Activities",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/activities",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "activities"]
+            }
+          }
+        },
+        {
+          "name": "Get Activity by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/activities/{{activityId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "activities", "{{activityId}}"]
+            }
+          }
+        },
+        {
+          "name": "Update Activity",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"type\": \"RUNNING\", \"duration\": 45, \"caloriesBurned\": 450, \"startTime\": \"2024-04-07T09:00:00\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/activities/{{activityId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "activities", "{{activityId}}"]
+            }
+          }
+        },
+        {
+          "name": "Delete Activity",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/activities/{{activityId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "activities", "{{activityId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sample Data Creation",
+      "item": [
+        {
+          "name": "Create Running Activity",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"type\": \"RUNNING\", \"duration\": 45, \"caloriesBurned\": 450, \"startTime\": \"2024-04-07T06:00:00\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/activities",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "activities"]
+            }
+          }
+        },
+        {
+          "name": "Create Cycling Activity",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"type\": \"CYCLING\", \"duration\": 60, \"caloriesBurned\": 500, \"startTime\": \"2024-04-07T07:00:00\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/activities",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "activities"]
+            }
+          }
+        },
+        {
+          "name": "Create Swimming Activity",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"type\": \"SWIMMING\", \"duration\": 40, \"caloriesBurned\": 400, \"startTime\": \"2024-04-07T08:00:00\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/activities",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "activities"]
+            }
+          }
+        },
+        {
+          "name": "Create Yoga Activity",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"type\": \"YOGA\", \"duration\": 50, \"caloriesBurned\": 200, \"startTime\": \"2024-04-07T17:00:00\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/activities",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "activities"]
+            }
+          }
+        },
+        {
+          "name": "Create Weight Training Activity",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"type\": \"WEIGHT_TRAINING\", \"duration\": 55, \"caloriesBurned\": 350, \"startTime\": \"2024-04-07T09:00:00\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/activities",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "activities"]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "activityId",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
+

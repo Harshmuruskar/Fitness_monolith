@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Activity Tracker - CRUD App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏋️ Fitness Activity Tracker</h1>
+            <p>Manage and track your fitness activities</p>
+        </div>
+
+        <!-- Add Activity Form -->
+        <div class="form-section">
+            <h2>Add New Activity</h2>
+            <form id="activityForm" class="activity-form">
+                <div class="form-group">
+                    <label for="activityType">Activity Type:</label>
+                    <select id="activityType" required>
+                        <option value="">Select Activity Type</option>
+                        <option value="RUNNING">Running</option>
+                        <option value="WALKING">Walking</option>
+                        <option value="CYCLING">Cycling</option>
+                        <option value="SWIMMING">Swimming</option>
+                        <option value="WEIGHT_TRAINING">Weight Training</option>
+                        <option value="YOGA">Yoga</option>
+                        <option value="HIIT">HIIT</option>
+                        <option value="CARDIO">Cardio</option>
+                        <option value="STRETCHING">Stretching</option>
+                        <option value="OTHER">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="duration">Duration (minutes):</label>
+                    <input type="number" id="duration" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="caloriesBurned">Calories Burned:</label>
+                    <input type="number" id="caloriesBurned" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="startTime">Start Time:</label>
+                    <input type="datetime-local" id="startTime" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Add Activity</button>
+                <button type="reset" class="btn btn-secondary">Clear Form</button>
+            </form>
+        </div>
+
+        <!-- Activities List -->
+        <div class="list-section">
+            <h2>Activities List</h2>
+            <div class="controls">
+                <input type="text" id="searchInput" placeholder="Search activities..." class="search-input">
+                <button id="refreshBtn" class="btn btn-info">🔄 Refresh</button>
+            </div>
+
+            <div id="activitiesContainer" class="activities-container">
+                <p class="loading">Loading activities...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Activity</h2>
+            <form id="editForm" class="activity-form">
+                <div class="form-group">
+                    <label for="editActivityType">Activity Type:</label>
+                    <select id="editActivityType" required>
+                        <option value="RUNNING">Running</option>
+                        <option value="WALKING">Walking</option>
+                        <option value="CYCLING">Cycling</option>
+                        <option value="SWIMMING">Swimming</option>
+                        <option value="WEIGHT_TRAINING">Weight Training</option>
+                        <option value="YOGA">Yoga</option>
+                        <option value="HIIT">HIIT</option>
+                        <option value="CARDIO">Cardio</option>
+                        <option value="STRETCHING">Stretching</option>
+                        <option value="OTHER">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="editDuration">Duration (minutes):</label>
+                    <input type="number" id="editDuration" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="editCaloriesBurned">Calories Burned:</label>
+                    <input type="number" id="editCaloriesBurned" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="editStartTime">Start Time:</label>
+                    <input type="datetime-local" id="editStartTime" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
